@@ -2,61 +2,49 @@
 
 ## Project Description
 
-The **Aigeon AI Google Images Light API** is a Python-based server application designed to facilitate lightweight and efficient image searches using Google's image search capabilities. By leveraging the SerpAPI, this project provides a streamlined interface for querying Google Images with a variety of customizable parameters, allowing users to tailor their search results according to specific requirements such as location, language, image size, and more.
+The Aigeon AI Google Images Light API is a Python-based server application designed to facilitate advanced image searches using Google's image search capabilities. This project leverages the SerpAPI service to perform detailed and customizable image queries, providing users with a powerful tool to retrieve images based on a wide range of parameters.
 
 ## Features Overview
 
-- **Customizable Search Queries**: Users can define search queries with a wide range of parameters to refine their image search results.
-- **Location and Language Support**: The API supports searches from specific locations and in various languages, simulating real user searches.
-- **Advanced Filtering Options**: Includes filters for image aspect ratio, size, color, type, and licenses, among others.
-- **Time-Based Search**: Allows searches to be limited to specific time periods or date ranges.
-- **Pagination and Device Emulation**: Supports pagination of results and emulation of different device types (desktop, tablet, mobile).
+- **Advanced Image Search**: Perform image searches with a variety of customizable parameters such as location, language, image size, color, type, and more.
+- **Flexible Query Parameters**: Utilize numerous parameters to refine search results, including date ranges, aspect ratios, and licenses.
+- **Integration with SerpAPI**: Seamlessly integrates with SerpAPI to fetch image search results, ensuring accurate and up-to-date data retrieval.
+- **Environment Configuration**: Utilizes environment variables for secure API key management.
 
 ## Main Features and Functionality
 
-1. **Search Images Light Functionality**:
-   - The primary function, `search_images_light`, allows users to perform Google Images searches with a variety of parameters.
-   - Parameters include query terms, location, language, image size, color, type, and more, providing extensive control over the search results.
+The core functionality of this project revolves around the `search_images_light` function, which is a tool registered with the FastMCP server. This function allows users to perform highly customizable image searches by specifying various parameters. Below are some of the key features:
 
-2. **Parameter Customization**:
-   - **Query (`q`)**: Define the search query using standard Google search operators.
-   - **Location (`location`)**: Specify the origin of the search to simulate user location.
-   - **Language (`hl`)**: Choose the language for the search results.
-   - **Image Attributes**: Filter images by aspect ratio (`imgar`), size (`imgsz`), color (`image_color`), and type (`image_type`).
-   - **Licensing (`licenses`)**: Restrict search results to images with specific usage rights.
-   - **Time Constraints**: Limit searches to specific periods using `period_unit`, `period_value`, `start_date`, and `end_date`.
+- **Query Customization**: Users can define search queries using typical Google search operators such as `inurl:`, `site:`, and `intitle:`.
+- **Location and Language Options**: Specify the origin of the search and the language to tailor results to specific regions or languages.
+- **Date Range Filtering**: Limit search results to specific time periods using start and end dates or relative time periods.
+- **Image Attributes**: Filter images by size, aspect ratio, color, and type to find exactly what you need.
+- **Licensing and Safety**: Control the scope of image licenses and the level of safe search filtering.
+- **Pagination and Device Simulation**: Manage result pagination and simulate searches from different devices like desktops, tablets, or mobile phones.
 
-3. **Advanced Search Options**:
-   - **Safe Search (`safe`)**: Control the level of adult content filtering.
-   - **Pagination (`start`)**: Manage result pagination for large sets of search results.
-   - **Device Emulation (`device`)**: Specify the type of device to emulate during the search.
-
-## API Endpoints or Main Functions Description
+## Main Function Description
 
 ### `search_images_light`
 
-The `search_images_light` function is the core of the API, providing a comprehensive interface for performing image searches. Below is a detailed description of its parameters:
+This function is the primary tool for conducting image searches. It accepts a variety of parameters that allow for detailed customization of search queries:
 
-- **`q`**: The search query string. It supports Google search operators for refined searches.
-- **`location`**: Optional parameter to specify the search's geographic origin.
-- **`uule`**: Google encoded location for search, mutually exclusive with `location`.
-- **`google_domain`**: Specifies the Google domain to use (e.g., google.com).
+- **`q`**: The main query string for the image search.
+- **`location`**: Specifies the geographic location from which the search should originate.
+- **`uule`**: Encoded location parameter for Google searches.
+- **`google_domain`**: Defines the Google domain to use, defaulting to `google.com`.
 - **`gl`**: Country code for the search.
 - **`hl`**: Language code for the search.
 - **`cr`**: Restricts search to specific countries.
-- **`period_unit` & `period_value`**: Define the time period for recent images.
-- **`start_date` & `end_date`**: Specify a date range for the search.
+- **`period_unit` and `period_value`**: Define the time period for recent images.
+- **`start_date` and `end_date`**: Specify the date range for the search.
 - **`tbs`**: Advanced search parameters.
-- **`imgar`**: Aspect ratio of images.
-- **`imgsz`**: Size of images.
-- **`image_color`**: Color of images.
-- **`image_type`**: Type of images.
-- **`licenses`**: Licensing scope of images.
-- **`safe`**: Level of adult content filtering.
+- **`imgar`, `imgsz`, `image_color`, `image_type`**: Define image attributes like aspect ratio, size, color, and type.
+- **`licenses`**: Specify the scope of image licenses.
+- **`safe`**: Set the level of filtering for adult content.
 - **`nfpr`**: Exclude results from auto-corrected queries.
 - **`filter`**: Enable or disable filters for similar and omitted results.
 - **`start`**: Result offset for pagination.
-- **`device`**: Device type for search results.
-- **`no_cache`**: Force fresh results from SerpAPI.
+- **`device`**: Simulate search from different devices.
+- **`no_cache`**: Force fresh results from SerpAPI, bypassing cache.
 
-This API is designed to provide users with a powerful tool for conducting detailed and specific image searches, making it ideal for applications that require precise image retrieval capabilities.
+This function is designed to provide a comprehensive and flexible interface for users to perform image searches tailored to their specific needs.
